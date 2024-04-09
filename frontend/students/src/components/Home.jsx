@@ -20,8 +20,7 @@ const Home = () => {
           " his age is - " +
           data.age +
           " his marks is - " +
-          data.marks +
-          " Anish the lazy GenZ Guy "}
+          data.marks}
       </h1>
     </div>
   );
