@@ -6,5 +6,7 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.json({ name: "Aritra", age: 23, marks: 56 });
 });
-
+app.get("/books", (req, res) => {
+  res.json({ name: "maths", topic: "calculus", price: 8000 });
+});
 app.listen(8000);
