@@ -12,9 +12,12 @@ const Home = () => {
         console.log(err);
       });
   }, []);
+
   return (
     <div className="to display">
-      <h1>Hello</h1>
+      <h1>
+        {data.name + " his age is - " + data.age + " his - " + data.marks}
+      </h1>
     </div>
   );
 };
