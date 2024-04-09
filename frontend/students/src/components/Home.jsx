@@ -4,7 +4,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000")
+      .get("http://api.urtechguru.online/")
       .then((res) => {
         setData(res.data);
       })
