@@ -16,7 +16,11 @@ const Home = () => {
   return (
     <div className="to display">
       <h1>
-        {data.name + " his age is - " + data.age + " his - " + data.marks}
+        {data.name +
+          " his age is - " +
+          data.age +
+          " his marks is - " +
+          data.marks}
       </h1>
     </div>
   );
