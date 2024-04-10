@@ -25,6 +25,7 @@ app.get("/movies", (req, res) => {
         "Miles Morales is juggling his life between being a high school student and being a spider-man. When Wilson 'Kingpin' Fisk uses a super collider, others from across the Spider-Verse are transported to this dimension.",
       release_date: 1544140800,
       genres: ["Action", "Adventure", "Animation", "Science Fiction", "Comedy"],
+      type: "action",
     },
     {
       id: "157433",
@@ -35,6 +36,7 @@ app.get("/movies", (req, res) => {
         "Louis Creed, his wife Rachel and their two children Gage and Ellie move to a rural home where they are welcomed and enlightened about the eerie 'Pet Sematary' located nearby. After the tragedy of their cat being killed by a truck, Louis resorts to burying it in the mysterious pet cemetery, which is definitely not as it seems, as it proves to the Creeds that sometimes dead is better.",
       release_date: 1554339600,
       genres: ["Thriller", "Horror"],
+      type: "Thriller",
     },
     {
       id: "299534",
@@ -45,6 +47,7 @@ app.get("/movies", (req, res) => {
         "After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos' actions and restore order to the universe once and for all, no matter what consequences may be in store.",
       release_date: 1556067600,
       genres: ["Adventure", "Science Fiction", "Action"],
+      type: "adventure",
     },
     {
       id: "287947",
@@ -55,6 +58,7 @@ app.get("/movies", (req, res) => {
         "A boy is given the ability to become an adult superhero in times of need with a single magic word.",
       release_date: 1553299200,
       genres: ["Action", "Comedy", "Fantasy"],
+      type: "Comedy",
     },
     {
       id: "299537",
@@ -65,6 +69,7 @@ app.get("/movies", (req, res) => {
         "The story follows Carol Danvers as she becomes one of the universe’s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all-new adventure from a previously unseen period in the history of the Marvel Cinematic Universe.",
       release_date: 1551830400,
       genres: ["Action", "Adventure", "Science Fiction"],
+      type: "Fiction",
     },
     {
       id: "522681",
@@ -75,6 +80,7 @@ app.get("/movies", (req, res) => {
         "Six strangers find themselves in circumstances beyond their control, and must use their wits to survive.",
       release_date: 1546473600,
       genres: ["Thriller", "Action", "Horror", "Science Fiction"],
+      type: "Horror",
     },
     {
       id: "166428",
@@ -85,6 +91,7 @@ app.get("/movies", (req, res) => {
         "As Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless’ discovery of an untamed, elusive mate draws the Night Fury away. When danger mounts at home and Hiccup’s reign as village chief is tested, both dragon and rider must make impossible decisions to save their kind.",
       release_date: 1546473600,
       genres: ["Animation", "Family", "Adventure"],
+      type: "Fiction",
     },
     {
       id: "450465",
@@ -95,6 +102,7 @@ app.get("/movies", (req, res) => {
         "In a series of escalating encounters, security guard David Dunn uses his supernatural abilities to track Kevin Wendell Crumb, a disturbed man who has twenty-four personalities. Meanwhile, the shadowy presence of Elijah Price emerges as an orchestrator who holds secrets critical to both men.",
       release_date: 1547596800,
       genres: ["Documentary"],
+      type: "Fiction",
     },
     {
       id: "495925",
@@ -105,6 +113,7 @@ app.get("/movies", (req, res) => {
         "The story is based on Robert Louis Stevenson's Treasure Island novel.",
       release_date: 1520035200,
       genres: ["Animation"],
+      type: "Fiction",
     },
     {
       id: "329996",
@@ -115,6 +124,7 @@ app.get("/movies", (req, res) => {
         "A young elephant, whose oversized ears enable him to fly, helps save a struggling circus, but when the circus plans a new venture, Dumbo and his friends discover dark secrets beneath its shiny veneer.",
       release_date: 1553644800,
       genres: ["Adventure", "Family", "Fantasy"],
+      type: "Fantasy",
     },
     {
       id: "299536",
@@ -125,6 +135,7 @@ app.get("/movies", (req, res) => {
         "As the Avengers and their allies have continued to protect the world from threats too large for any one hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy, his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate of Earth and existence itself has never been more uncertain.",
       release_date: 1524618000,
       genres: ["Adventure", "Action", "Science Fiction"],
+      type: "Action",
     },
     {
       id: "458723",
@@ -135,6 +146,7 @@ app.get("/movies", (req, res) => {
         "Husband and wife Gabe and Adelaide Wilson take their kids to their beach house expecting to unplug and unwind with friends. But as night descends, their serenity turns to tension and chaos when some shocking visitors arrive uninvited.",
       release_date: 1552521600,
       genres: ["Documentary", "Family"],
+      type: "Family",
     },
     {
       id: "424783",
@@ -145,6 +157,7 @@ app.get("/movies", (req, res) => {
         "On the run in the year 1987, Bumblebee finds refuge in a junkyard in a small Californian beach town. Charlie, on the cusp of turning 18 and trying to find her place in the world, discovers Bumblebee, battle-scarred and broken.  When Charlie revives him, she quickly learns this is no ordinary yellow VW bug.",
       release_date: 1544832000,
       genres: ["Action", "Adventure", "Science Fiction"],
+      type: "Action",
     },
     {
       id: "920",
@@ -155,6 +168,7 @@ app.get("/movies", (req, res) => {
         "Lightning McQueen, a hotshot rookie race car driven to succeed, discovers that life is about the journey, not the finish line, when he finds himself unexpectedly detoured in the sleepy Route 66 town of Radiator Springs. On route across the country to the big Piston Cup Championship in California to compete against two seasoned pros, McQueen gets to know the town's offbeat characters.",
       release_date: 1149728400,
       genres: ["Animation", "Adventure", "Comedy", "Family"],
+      type: "Fantasy",
     },
     {
       id: "456740",
@@ -165,6 +179,7 @@ app.get("/movies", (req, res) => {
         "Hellboy comes to England, where he must defeat Nimue, Merlin's consort and the Blood Queen. But their battle will bring about the end of the world, a fate he desperately tries to turn away.",
       release_date: 1554944400,
       genres: ["Fantasy", "Action"],
+      type: "Fantasy",
     },
     {
       id: "537915",
@@ -175,6 +190,7 @@ app.get("/movies", (req, res) => {
         "A young woman falls for a guy with a dark secret and the two embark on a rocky relationship.",
       release_date: 1554944400,
       genres: ["Mystery", "Drama"],
+      type: "Mystery",
     },
     {
       id: "485811",
@@ -185,6 +201,7 @@ app.get("/movies", (req, res) => {
         "After a zombie apocalypse spreads from a London prison, the UK is brought to its knees. The spread of the virus is temporarily contained but, without a cure, it’s only a matter of time before it breaks its boundaries and the biggest problem of all… any zombies with combat skills are now enhanced. With the South East of England quarantined from the rest of the world using fortified borders, intelligence finds that the scientist responsible for the outbreak is alive and well in London. With his recovery being the only hope of a cure, a squad of eight Special Forces soldiers is sent on a suicide mission to the city, now ruled by the undead, with a single task: get him out alive within 72 hours by any means necessary. What emerges is an unlikely pairing on a course to save humanity against ever-rising odds.",
       release_date: 1538096400,
       genres: ["Action", "Horror"],
+      type: "Horror",
     },
     {
       id: "471507",
@@ -195,6 +212,7 @@ app.get("/movies", (req, res) => {
         "Erin Bell is an LAPD detective who, as a young cop, was placed undercover with a gang in the California desert with tragic results. When the leader of that gang re-emerges many years later, she must work her way back through the remaining members and into her own history with them to finally reckon with the demons that destroyed her past.",
       release_date: 1545696000,
       genres: ["Horror", "Thriller"],
+      type: "Horror",
     },
     {
       id: "400650",
@@ -205,6 +223,7 @@ app.get("/movies", (req, res) => {
         "In Depression-era London, a now-grown Jane and Michael Banks, along with Michael's three children, are visited by the enigmatic Mary Poppins following a personal loss. Through her unique magical skills, and with the aid of her friend Jack, she helps the family rediscover the joy and wonder missing in their lives.",
       release_date: 1544659200,
       genres: ["Documentary"],
+      type: "Fiction",
     },
   ]);
 });
