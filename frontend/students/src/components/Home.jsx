@@ -4,7 +4,7 @@ const Home = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios
-      .get("http://api.urtechguru.online/")
+      .get("https://api.urtechguru.online/")
       .then((res) => {
         setData(res.data);
       })
