@@ -29,7 +29,12 @@ const Imagehandler = () => {
     for (var pair of formData.entries()) {
       console.log(pair[0] + " - " + pair[1]);
     }
-    const config = { headers: { "Content-Type": "multipart/form-data" } };
+    const config = {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "Access-Control-Allow-Origin": "*",
+      },
+    };
 
     axios
       .post("https://api.urtechguru.online/states", formData, config)
