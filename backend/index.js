@@ -1,6 +1,31 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const multer = require("multer");
+const app = express();
+const fs = require("fs");
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname + "/public"));
+app.use("/uploads", express.static("uploads"));
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    var dir = "./uploads";
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+    cb(null, dir);
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname);
+  },
+});
+
+var upload = multer({ storage: storage });
+
+mongoose.connect("mongodb://localhost:27017/apidb");
 const testSchema = new mongoose.Schema(
   {
     image: {
@@ -10,9 +35,46 @@ const testSchema = new mongoose.Schema(
   },
   { collection: "api" }
 );
-mongoose.connect("mongodb://localhost:27017/gallery");
-const apis = mongoose.model("api", testSchema);
-const app = express();
+const stateSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    population: {
+      type: String,
+      required: true,
+    },
+    capital: {
+      type: String,
+      required: true,
+    },
+    gdp: {
+      type: String,
+      required: true,
+    },
+    cmname: {
+      type: String,
+      required: true,
+    },
+    rulingparty: {
+      type: String,
+      required: true,
+    },
+    gdppercapita: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+  },
+  { collection: "stategk" }
+);
+//mongoose.connect("mongodb://localhost:27017/gallery");
+const sg = mongoose.model("stategk", stateSchema);
+
 app.use(cors());
 app.get("/", (req, res) => {
   res.json({ name: "Aritra", age: 23, marks: 56 });
@@ -239,10 +301,40 @@ app.get("/movies", (req, res) => {
   ]);
 });
 
-app.get("/gallery", (req, res) => {
+/*app.get("/gallery", (req, res) => {
   apis
     .find()
     .then((apiVal) => res.json(apiVal))
     .catch((err) => res.json(err));
+});*/
+//State GET
+app.get("/states", (req, res) => {
+  sg.find()
+    .then((sgs) => res.json(sgs))
+    .catch((err) => res.json(err));
 });
+
+//State Post
+app.post("/states", upload.single("file"), async (req, res) => {
+  const val1 = req.file.filename;
+  const name = req.body.name;
+  const population = req.body.population;
+  const capital = req.body.capital;
+  const gdp = req.body.gdp;
+  const cmname = req.body.cmname;
+  const rulingparty = req.body.rulingparty;
+  const gdppercapita = req.body.gdppercapita;
+  let sgs = new sg({
+    name: name,
+    population: population,
+    capital: capital,
+    gdp: gdp,
+    cmname: cmname,
+    rulingparty: rulingparty,
+    gdppercapita: gdppercapita,
+    image: val1,
+  });
+  sgs.save();
+});
+
 app.listen(8000);
