@@ -72,7 +72,7 @@ const stateSchema = new mongoose.Schema(
   { collection: "stategk" }
 );
 //mongoose.connect("mongodb://localhost:27017/gallery");
-const sg = mongoose.model("stategk", stateSchema);
+const sg1 = mongoose.model("stategk", stateSchema);
 
 app.use(cors());
 app.get("/", (req, res) => {
@@ -308,7 +308,8 @@ app.get("/movies", (req, res) => {
 });*/
 //State GET
 app.get("/states", (req, res) => {
-  sg.find()
+  sg1
+    .find()
     .then((sgs) => res.json(sgs))
     .catch((err) => res.json(err));
 });
