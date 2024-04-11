@@ -32,7 +32,7 @@ const Imagehandler = () => {
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
     axios
-      .post("http://127.0.0.1:8000/states", formData, config)
+      .post("https://api.urtechguru.online/states", formData, config)
       .then((res) => {
         if (res.status === 200) {
           document.getElementById("tag").innerHTML = "Image Upload Successful";
