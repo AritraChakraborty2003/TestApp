@@ -1,6 +1,17 @@
 const express = require("express");
 const cors = require("cors");
-
+const mongoose = require("mongoose");
+const testSchema = new mongoose.Schema(
+  {
+    image: {
+      type: String,
+      required: true,
+    },
+  },
+  { collection: "api" }
+);
+mongoose.connect("mongodb://localhost:27017/gallery");
+const apis = mongoose.model("api", testSchema);
 const app = express();
 app.use(cors());
 app.get("/", (req, res) => {
@@ -226,5 +237,12 @@ app.get("/movies", (req, res) => {
       type: "Fiction",
     },
   ]);
+});
+
+app.get("/gallery", (req, res) => {
+  apis
+    .find()
+    .then((apiVal) => res.json(apiVal))
+    .catch((err) => res.json(err));
 });
 app.listen(8000);
