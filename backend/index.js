@@ -4,7 +4,11 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const app = express();
 const fs = require("fs");
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://urtechguru.online",
+  })
+);
 /*app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
