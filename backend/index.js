@@ -7,7 +7,7 @@ const fs = require("fs");
 app.use(
   cors({
     credentials: true,
-    origin: "https://urtechguru.online",
+    origin: ["https://urtechguru.online", "https://urtechguru.online/cmspage"],
   })
 );
 app.use(function (request, response, next) {
