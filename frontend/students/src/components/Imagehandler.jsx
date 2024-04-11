@@ -31,16 +31,18 @@ const Imagehandler = () => {
     }
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
-    try {
-      const data = await axios.post(
-        "http://127.0.0.1:8000/states",
-        formData,
-        config
-      );
-      console.log(data);
-    } catch (err) {
-      console.log(err);
-    }
+    axios
+      .post("http://127.0.0.1:8000/states", formData, config)
+      .then((res) => {
+        if (res.status === 200) {
+          document.getElementById("tag").innerHTML = "Image Upload Successful";
+        } else {
+          console.log(res.status);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
