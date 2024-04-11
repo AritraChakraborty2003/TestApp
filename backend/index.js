@@ -6,6 +6,7 @@ const app = express();
 const fs = require("fs");
 app.use(
   cors({
+    credentials: true,
     origin: "https://urtechguru.online",
   })
 );
