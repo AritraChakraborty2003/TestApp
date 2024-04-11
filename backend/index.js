@@ -72,7 +72,7 @@ const stateSchema = new mongoose.Schema(
   { collection: "stategk" }
 );
 //mongoose.connect("mongodb://localhost:27017/gallery");
-const sg1 = mongoose.model("stategk", stateSchema);
+const sg = mongoose.model("stategk", stateSchema);
 
 app.use(cors());
 app.get("/", (req, res) => {
@@ -308,8 +308,7 @@ app.get("/movies", (req, res) => {
 });*/
 //State GET
 app.get("/states", (req, res) => {
-  sg1
-    .find()
+  sg.find()
     .then((sgs) => res.json(sgs))
     .catch((err) => res.json(err));
 });
@@ -334,7 +333,7 @@ app.post("/states", upload.single("file"), async (req, res) => {
     gdppercapita: gdppercapita,
     image: val1,
   });
-  sgs.save();
+  sg.save();
 });
 
 app.listen(8000);
